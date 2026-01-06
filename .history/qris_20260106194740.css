@@ -1,0 +1,308 @@
+:root {
+    --primary: #2563eb;
+    --emerald: #059669;
+    --rose: #dc2626;
+    --slate-800: #1e293b;
+    --white: #ffffff;
+    /* Ukuran teks proporsional untuk orang tua */
+    --text-xl: 1.5rem;
+    /* 24px */
+    --text-lg: 1.25rem;
+    /* 20px */
+    --text-base: 1.1rem;
+    /* 18px - Standar teks orang tua */
+    --text-sm: 0.95rem;
+    /* 15px */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: #f8fafc;
+    color: var(--slate-800);
+    font-size: var(--text-base);
+    /* Default teks besar */
+}
+
+/* Loading Overlay Full Screen */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader-box {
+    text-align: center;
+    color: var(--primary);
+}
+
+.loader-box i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.loader-box p {
+    font-weight: 700;
+    font-size: var(--text-lg);
+}
+
+/* Header & Refresh */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 16px;
+    background: var(--white);
+    border-bottom: 2px solid #e2e8f0;
+    top: 0;
+    z-index: 100;
+}
+/* Tambahkan ini di file qris.css Anda */
+
+.brand {
+    display: flex;
+    align-items: center;
+    /* Hapus gap: 12px; jika sebelumnya ada, kita atur di margin gambar saja */
+}
+
+.brand-logo {
+    /* Mengatur ukuran tinggi logo agar proporsional dengan teks */
+    height: 55px; 
+    width: auto; /* Lebar menyesuaikan tinggi */
+    
+    /* Memberi jarak antara logo dan teks di sebelahnya */
+    margin-right: 15px;
+
+    /* Opsional: agar gambar tidak gepeng jika ukurannya tidak persegi */
+    object-fit: contain;
+    
+    /* Opsional: memberi sedikit lengkungan di sudut logo */
+    border-radius: 8px;
+}
+
+/* Penyesuaian untuk layar HP kecil agar logo tidak terlalu mendominasi */
+@media (max-width: 480px) {
+    .brand-logo {
+        height: 45px;
+        margin-right: 10px;
+    }
+}
+.brand h1 {
+    font-size: var(--text-lg);
+}
+
+.refresh-btn {
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: none;
+    background: var(--slate-800);
+    color: white;
+    font-weight: 700;
+    font-size: var(--text-sm);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Stats */
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 12px;
+}
+
+.s-card {
+    padding: 15px 5px;
+    border-radius: 16px;
+    text-align: center;
+    color: white;
+}
+
+.s-card.blue {
+    background: #2563eb;
+}
+
+.s-card.rose {
+    background: #dc2626;
+}
+
+.s-card.emerald {
+    background: #059669;
+}
+
+.s-card h3 {
+    font-size: var(--text-xl);
+    font-weight: 800;
+}
+
+.s-card p {
+    font-size: 0.75rem;
+    font-weight: 700;
+    opacity: 0.9;
+}
+
+/* Dashboard Layout */
+.main-content {
+    padding: 8px;
+}
+
+.panel {
+    background: white;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+
+.panel-header {
+    padding: 16px;
+    font-weight: 800;
+    border-bottom: 1px solid #e2e8f0;
+    background: #f1f5f9;
+}
+
+/* Card Style for List (Pengganti Table agar tidak geser kanan-kiri) */
+.list-pelapak {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+}
+
+.pelapak-item {
+    background: #fff;
+    border: 2px solid #f1f5f9;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.p-name {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--primary);
+    display: block;
+}
+
+/* Input & Select Besar */
+.label-hint {
+    display: block;
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.input-big {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: 2px solid #cbd5e1;
+    font-size: var(--text-base);
+    margin-bottom: 16px;
+    outline: none;
+}
+
+.input-big:focus {
+    border-color: var(--primary);
+}
+
+.btn-simpan {
+    width: 100%;
+    padding: 16px;
+    border-radius: 12px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    font-size: var(--text-base);
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #1e40af;
+    /* Efek 3D agar jelas itu tombol */
+}
+
+.btn-simpan:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+.btn-simpan:disabled {
+    background: #94a3b8;
+    box-shadow: none;
+}
+
+/* Search Bar Besar */
+.search-bar {
+    padding: 16px;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-group i {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 16px 16px 16px 50px;
+    border-radius: 15px;
+    border: 2px solid #e2e8f0;
+    font-size: var(--text-base);
+    background: #f1f5f9;
+}
+
+/* Toast */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1e293b;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    display: none;
+    z-index: 10000;
+}
+
+/* Grafik Height */
+.chart-container {
+    height: 250px;
+    padding: 16px;
+}
+
+@media (min-width: 800px) {
+    .dashboard-layout {
+        display: grid;
+        grid-template-columns: 350px 1fr;
+        gap: 20px;
+    }
+
+    .list-pelapak {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+}

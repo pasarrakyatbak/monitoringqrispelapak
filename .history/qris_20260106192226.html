@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Monitoring QRIS | Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="qris.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="app-container">
+        <header class="header">
+            <div class="header-inner">
+                <div class="brand">
+                    <div class="icon-box"><i class="fas fa-qrcode"></i></div>
+                    <div>
+                        <h1>Monitoring QRIS Pelapak</h1>
+                        <p>Pasar Rakyat Bangetayu Kulon</p>
+                    </div>
+                </div>
+                <div class="current-date" id="dateToday">Senin, 6 Januari 2026</div>
+            </div>
+        </header>
+
+        <main class="content">
+            <div class="stats-row">
+                <div class="stat-card">
+                    <span class="label">Total Sudah QRIS</span>
+                    <h2 id="jmlSudah">0</h2>
+                    <div class="progress-bar">
+                        <div id="barSudah" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="label">Belum Memiliki</span>
+                    <h2 id="jmlBelum">0</h2>
+                    <div class="progress-bar warning">
+                        <div id="barBelum" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="stat-card highlight">
+                    <span class="label">Capaian Target</span>
+                    <h2 id="persenQRIS">0%</h2>
+                    <p class="sub-label">Dari total seluruh pelapak</p>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <section class="card chart-section">
+                    <div class="card-header">
+                        <h3><i class="fas fa-chart-pie"></i> Ringkasan Data</h3>
+                    </div>
+                    <div class="chart-box">
+                        <canvas id="chartQRIS"></canvas>
+                    </div>
+                </section>
+
+                <section class="card table-section">
+                    <div class="table-toolbar">
+                        <div class="search-wrapper">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="searchLapak" placeholder="Cari pelapak..." onkeyup="filterLapak()">
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-outline" onclick="filterBelumQRIS()">Belum QRIS</button>
+                            <button class="btn btn-ghost" onclick="resetFilter()"><i class="fas fa-sync"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Info Pelapak</th>
+                                    <th>Nomor Lapak</th>
+                                    <th>Status</th>
+                                    <th style="text-align: right;">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="dataQRIS">
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <div id="toast" class="toast">Data berhasil disimpan!</div>
+
+    <script src="qris.js"></script>
+</body>
+
+</html>

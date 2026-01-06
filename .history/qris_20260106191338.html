@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Monitoring QRIS Pelapak</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="qris.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <h1>Monitoring QRIS Pelapak<br>Pasar Rakyat Bangetayu Kulon</h1>
+
+    <!-- Statistik -->
+    <div class="stats">
+        <div class="stat-card">
+            <h3 id="jmlSudah">0</h3>
+            <p>Sudah QRIS</p>
+        </div>
+        <div class="stat-card">
+            <h3 id="jmlBelum">0</h3>
+            <p>Belum QRIS</p>
+        </div>
+        <div class="stat-card">
+            <h3 id="persenQRIS">0%</h3>
+            <p>Capaian</p>
+        </div>
+    </div>
+
+    <!-- Grafik -->
+    <div class="card">
+        <canvas id="chartQRIS"></canvas>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="card">
+        <div class="toolbar">
+            <input type="text" id="searchLapak" placeholder="🔍 Cari nama lapak..." class="search-input"
+                onkeyup="filterLapak()">
+
+            <button class="filter-btn" onclick="filterBelumQRIS()">Belum QRIS</button>
+            <button class="reset-btn" onclick="resetFilter()">Reset</button>
+        </div>
+
+        <!-- Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Lapak</th>
+                    <th>Nomor Lapak</th>
+                    <th>Status</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="dataQRIS"></tbody>
+        </table>
+    </div>
+
+    <!-- JS -->
+    <script src="qris.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base target="_top">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Monitoring QRIS Pelapak</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="qris.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <h1>Monitoring QRIS Pelapak<br>Pasar Rakyat Bangetayu Kulon</h1>
+
+    <div class="card">
+        <canvas id="chartQRIS"></canvas>
+    </div>
+
+    <div class="card">
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Nomor Lapak</th>
+                    <th>Status QRIS</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="dataQRIS"></tbody>
+        </table>
+    </div>
+
+    <!-- JS -->
+    <script src="qris.js"></script>
+
+</body>
+
+</html>
