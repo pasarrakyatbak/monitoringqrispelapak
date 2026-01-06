@@ -289,6 +289,77 @@ body {
     padding: 16px;
 }
 
+
+
+/* Gaya Panduan (Guide) */
+.guide-panel {
+    border: 2px solid var(--primary);
+    /* Warna biru agar menonjol */
+    margin-bottom: 20px;
+}
+
+.guide-toggle {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--primary-light) !important;
+    color: var(--primary);
+    cursor: pointer;
+    border: none;
+}
+
+.guide-body {
+    padding: 20px;
+    background: white;
+}
+
+.guide-step {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: flex-start;
+}
+
+.step-num {
+    background: var(--primary);
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.guide-step p {
+    font-size: var(--text-base);
+    line-height: 1.5;
+}
+
+.guide-note {
+    margin-top: 15px;
+    padding: 12px;
+    background: #fff8e1;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: #b45309;
+    font-weight: 700;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#guide-icon {
+    transition: transform 0.3s;
+}
+
+.guide-open #guide-icon {
+    transform: rotate(180deg);
+}
+
 @media (min-width: 800px) {
     .dashboard-layout {
         display: grid;
