@@ -55,7 +55,7 @@ function renderData(data) {
             <span class="p-name">${d.nama}</span>
             
             <label class="label-hint">Nomor Lapak:</label>
-            <input type="text" class="input-big" id="lapak-${d.no}" value="${d.nomorLapak || ''}" placeholder="Contoh: A-01">
+            <input type="text" class="input-big" id="lapak-${d.no}" value="${d.nomorLapak || ''}" placeholder="Contoh: 25">
             
             <label class="label-hint">Status Pengambilan QRIS:</label>
             <select class="input-big" id="status-${d.no}">
