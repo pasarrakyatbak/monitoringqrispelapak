@@ -131,3 +131,16 @@ function showToast() {
 }
 
 document.addEventListener("DOMContentLoaded", init);
+// Fungsi Buka-Tutup Panduan
+function toggleGuide() {
+    const content = document.getElementById("guide-content");
+    const panel = document.querySelector(".guide-panel");
+
+    if (content.style.display === "none") {
+        content.style.display = "block";
+        panel.classList.add("guide-open");
+    } else {
+        content.style.display = "none";
+        panel.classList.remove("guide-open");
+    }
+}
